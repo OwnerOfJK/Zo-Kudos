@@ -15,16 +15,16 @@ version = "0.3.11"
 source = "git+https://github.com/dojoengine/dojo?tag=v0.3.11#1e651b5d4d3b79b14a7d8aa29a92062fcb9e6659"
 
 [[package]]
-name = "myapp"
-version = "0.0.1"
+name = "pixelaw"
+version = "0.0.62"
+source = "git+https://github.com/pixelaw/core#ecb6d467054224c9a7e1e71abe200b2ea974e962"
 dependencies = [
- "pixelaw",
+ "dojo",
 ]
 
 [[package]]
-name = "pixelaw"
-version = "0.0.45"
-source = "git+https://github.com/pixelaw/core?tag=v0.0.45#ccf35b53b29a97087d4366568fc158c6d6734a9d"
+name = "zokudos"
+version = "0.0.1"
 dependencies = [
- "dojo",
+ "pixelaw",
 ]
