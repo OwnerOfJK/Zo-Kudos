@@ -14,7 +14,7 @@ trait IZoKudosActions<TContractState> {
 const APP_KEY: felt252 = 'zokudos';
 
 /// Core only supports unicode icons for now
-const APP_ICON: felt252 = 'U+263A';
+const APP_ICON: felt252 = 'U+1F3F0';
 
 /// prefixing with BASE means using the server's default manifest.json handler
 const APP_MANIFEST: felt252 = 'BASE/manifests/zokudos';
@@ -111,8 +111,8 @@ mod zokudos_actions {
             // And load the corresponding GameField
             let mut field = get!(world, (position.x, position.y), ZoKudosField);
 
-            // Ensure this pixel was not already used for a move
-            // assert(field.state == 0, 'field already set'); I commented this assert out for now.
+            // Ensure this pixel is free and available
+            assert(field.state == 0, 'field already set');
 
             // Process the player's move
             field.state = 1;
@@ -128,7 +128,7 @@ mod zokudos_actions {
                         y: position.y,
                         color: Option::Some(default_params.color),
                         timestamp: Option::None,
-                        text: Option::None,
+                        text: Option::Some('U+1F3F0'),
                         app: Option::None,
                         owner: Option::Some(player),
                         action: Option::Some('none')
